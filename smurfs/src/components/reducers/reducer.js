@@ -18,7 +18,7 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         smurfs: [...state.smurfs, action.payload],
-        smurf: { name: '', height: '', age: '' }
+        smurf: { ...state.smurf, name: '', height: '', age: '' }
       }
 
     case 'NAME_CHANGE':
