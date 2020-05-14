@@ -6,17 +6,18 @@ import "./App.css";
 
 const App = ({ smurfs, smurf, getData, addData, nameChange, heightChange, ageChange }) => {
 
-  const add = (e) => {
+  const submit = (e) => {
     e.preventDefault();
     addData(smurf);
-    getData();
+
+    setTimeout(function () { getData(); }, 100);
   }
 
   return (
     <div className="App">
       <h2>Smurf village</h2>
       <button onClick={getData}>Show the smurf</button>
-      <button onClick={add}>Add</button>
+      <button onClick={submit}>Add</button>
       <form>
         <input
           name='name'
